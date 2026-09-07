@@ -22,17 +22,18 @@ Most of my professional work isn't public. These are personal projects, built to
 craft:
 
 - **[recomps](https://github.com/glbabior/recomps)** – An LLM-orchestrated research pipeline that
-  prices a property against its comparable sales and displays the answer with an option to output
-  a spreadsheet. It categorizes properties sold and for sale by configurable attributes
-  and also identifies the real estate agents involved, capturing the number sold and the average
-  % above or below asking prices. Built for the lots left after the Eaton Fire burned through
-  Altadena, where there is no established price per square foot but is being expanded to allow
-  searched on properties beyond just empty lots.
+  prices a property against its comparable sales and writes the answer as a spreadsheet you can
+  argue with. Built for the lots left after the Eaton Fire burned through Altadena, where there is
+  no established price per square foot and the usual market-median shortcut misprices small parcels
+  in a specific, expensive way.
 
-- **[pig-purchase-tracking](https://github.com/glbabior/pig-purchase-tracking)** – Spring Boot
-  budget tracker. Point it at folders of bank and credit-card statement PDFs and it parses them into
-  categorized transactions, then tracks actual spend against budget. Runs on your machine; dollar
-  amounts never leave it.
+- **[pig-purchase-tracking](https://github.com/glbabior/pig-purchase-tracking)** – Local-first
+  budget tracker in Java and Spring Boot. Point it at folders of bank and credit-card statement PDFs
+  and it parses them into transactions, then categorizes them through a hint system that learns from
+  the corrections you make by hand, sending only what the rules cannot place to the Claude API.
+  Tracks budget against actual per month and on a rolling average, with per-category trends over
+  time and budgets that change going forward rather than rewriting history. Dollar amounts never
+  leave the machine.
 
 ### Elsewhere
 
