@@ -21,32 +21,32 @@ through the same ones.
 Most of my professional work isn't public. These are personal projects, built to stay close to the
 craft:
 
-**[recomps](https://github.com/glbabior/recomps)** — an LLM-orchestrated research pipeline for
-pricing a property against its comparable sales. Deterministic passes read what the listing sites
-already publish and answer most of the question for free, and parallel agent workers are dispatched
-only at the gaps. Built for the lots left after the Eaton Fire burned through Altadena, where a
-market-median price per square foot systematically underprices a small parcel.
+**[recomps](https://github.com/glbabior/recomps)** — works out what a property is worth by comparing
+it to nearby sales. It starts with the sales data the listing sites already publish, which is free
+and covers most of what it needs, and only sends AI workers out to research a property when
+something is missing. I built it for the lots left after the Eaton Fire burned through Altadena,
+where using the market's median price per square foot makes a small lot look cheaper than it is.
 
-It reports on screen, and exports a workbook of live formulas when you want one. Either way the run
-produces four valuation bases side by side rather than blended, a size/rate table splitting sales
-into equal-count bands so the size premium is read off a column instead of assumed, a bracket ladder
-showing how far the estimate moves as "similar size" widens from tight to the whole market, a
-by-area breakdown of the market's four quadrants with parcel size beside every rate, the
-sold-to-ask distribution, and an agent table — who closed what, at what ratio to asking, at what
-rate, on what median parcel size — as a shortlist to interview rather than a ranking.
+Results show on screen, and you can export a spreadsheet. A run gives you the value figured four
+different ways, side by side instead of averaged together. Three suggested list prices and a price
+to walk away at. A table grouping sales by lot size, so you can see for yourself whether smaller
+lots really do sell for more per square foot. How much the estimate moves depending on how loosely
+you define "a similar size lot". A breakdown by area of town. And a list of the agents who actually
+sold these lots — how many each sold, how close to asking they got, at what price per square foot,
+and on what size lot — meant as people to interview, not a ranking.
 
-**[pig-purchase-tracking](https://github.com/glbabior/pig-purchase-tracking)** — a local-first
-budget tracker in Java and Spring Boot. Point it at folders of bank and credit-card statement PDFs
-and it parses, reconciles and categorizes them. Categorization is a learning loop: you write hints
-against a category, the app previews what a hint would catch *before* you save it, flags collisions
-where two categories claim the same transaction, and folds your manual corrections back into the
-rules, so the share that has to go to the Claude API shrinks over time.
+**[pig-purchase-tracking](https://github.com/glbabior/pig-purchase-tracking)** — a budget tracker
+that runs on your own machine. Point it at folders of bank and credit-card statement PDFs and it
+pulls out the transactions and sorts them into your budget categories. It learns as it goes: you
+write rules for a category, it shows you what a rule would catch before you save it, warns you when
+two categories both claim the same purchase, and remembers the corrections you make by hand.
+Anything it still can't place goes to the Claude API, and that gets rarer over time.
 
-Spend is tracked per month and as a rolling average across the months you mark complete, per
-category and in total, with spend-over-time charts per category and click-through from any category
-to the transactions behind it. Budgets are dated facts: changing one asks whether it changed *going
-forward* or was simply wrong, so past months stay measured against the budget they were lived under
-and the rolling view averages the budgets actually in force. Dollar amounts never leave the machine.
+It tracks each month against your budget, and averages across the months you have marked finished,
+so you see a typical month rather than one odd one. Charts show spending per category over time, and
+you can click any category to read the transactions behind the number. Budgets have dates: when you
+change one it asks whether the amount changed going forward or was simply wrong, so old months stay
+measured against what you were budgeting at the time. Dollar amounts never leave your machine.
 
 ### Elsewhere
 
