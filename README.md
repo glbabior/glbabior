@@ -21,6 +21,12 @@ through the same ones.
 Most of my professional work isn't public. These are personal projects, built to stay close to the
 craft:
 
+- **[recomps](https://github.com/glbabior/recomps)** – An LLM-orchestrated research pipeline that
+  prices a property against its comparable sales and writes the answer as a spreadsheet you can
+  argue with. Built for the lots left after the Eaton Fire burned through Altadena, where there is
+  no established price per square foot and the usual market-median shortcut misprices small parcels
+  in a specific, expensive way.
+
 - **[pig-purchase-tracking](https://github.com/glbabior/pig-purchase-tracking)** – Spring Boot
   budget tracker. Point it at folders of bank and credit-card statement PDFs and it parses them into
   categorized transactions, then tracks actual spend against budget. Runs on your machine; dollar
