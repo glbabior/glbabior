@@ -21,19 +21,32 @@ through the same ones.
 Most of my professional work isn't public. These are personal projects, built to stay close to the
 craft:
 
-- **[recomps](https://github.com/glbabior/recomps)** – An LLM-orchestrated research pipeline that
-  prices a property against its comparable sales and writes the answer as a spreadsheet you can
-  argue with. Built for the lots left after the Eaton Fire burned through Altadena, where there is
-  no established price per square foot and the usual market-median shortcut misprices small parcels
-  in a specific, expensive way.
+**[recomps](https://github.com/glbabior/recomps)** — an LLM-orchestrated research pipeline for
+pricing a property against its comparable sales. Deterministic passes read what the listing sites
+already publish and answer most of the question for free, and parallel agent workers are dispatched
+only at the gaps. Built for the lots left after the Eaton Fire burned through Altadena, where a
+market-median price per square foot systematically underprices a small parcel.
 
-- **[pig-purchase-tracking](https://github.com/glbabior/pig-purchase-tracking)** – Local-first
-  budget tracker in Java and Spring Boot. Point it at folders of bank and credit-card statement PDFs
-  and it parses them into transactions, then categorizes them through a hint system that learns from
-  the corrections you make by hand, sending only what the rules cannot place to the Claude API.
-  Tracks budget against actual per month and on a rolling average, with per-category trends over
-  time and budgets that change going forward rather than rewriting history. Dollar amounts never
-  leave the machine.
+It reports on screen, and exports a workbook of live formulas when you want one. Either way the run
+produces four valuation bases side by side rather than blended, a size/rate table splitting sales
+into equal-count bands so the size premium is read off a column instead of assumed, a bracket ladder
+showing how far the estimate moves as "similar size" widens from tight to the whole market, a
+by-area breakdown of the market's four quadrants with parcel size beside every rate, the
+sold-to-ask distribution, and an agent table — who closed what, at what ratio to asking, at what
+rate, on what median parcel size — as a shortlist to interview rather than a ranking.
+
+**[pig-purchase-tracking](https://github.com/glbabior/pig-purchase-tracking)** — a local-first
+budget tracker in Java and Spring Boot. Point it at folders of bank and credit-card statement PDFs
+and it parses, reconciles and categorizes them. Categorization is a learning loop: you write hints
+against a category, the app previews what a hint would catch *before* you save it, flags collisions
+where two categories claim the same transaction, and folds your manual corrections back into the
+rules, so the share that has to go to the Claude API shrinks over time.
+
+Spend is tracked per month and as a rolling average across the months you mark complete, per
+category and in total, with spend-over-time charts per category and click-through from any category
+to the transactions behind it. Budgets are dated facts: changing one asks whether it changed *going
+forward* or was simply wrong, so past months stay measured against the budget they were lived under
+and the rolling view averages the budgets actually in force. Dollar amounts never leave the machine.
 
 ### Elsewhere
 
