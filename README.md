@@ -10,11 +10,12 @@ change-management discipline that keeps systems running once they ship. At TiVo 
 reduction in P1 production incidents and data delivery latency down from 25+ hours to under 30
 minutes.
 
-I use Claude Code hands-on nearly every day – building complete applications and setting up
-documentation, code-review, and security agents. That practice has raised questions I don't
-consider settled: how much of an AI-authored codebase a team can honestly claim to understand, and
-where human review is best spent. I'm interested in how other engineering organizations are working
-through the same ones.
+I use Claude Code hands-on nearly every day - building complete applications and setting up 
+documentation, code-review, and security agents. The velocity gains are real and dramatic - working 
+software in days that would once have taken weeks. That same velocity is what sharpens the harder 
+questions, though - how much of an AI-authored codebase a team can honestly claim to understand, 
+and where human review is best spent. I'm actively interested in how other engineering organizations
+are working through the same questions.
 
 ### What's here
 
